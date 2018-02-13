@@ -1,0 +1,107 @@
+body {
+  background-color: #2d3436;
+}
+
+h1 {
+  font-family: Cerebri Sans, sans-serif;
+  text-align: center;
+  margin-top: 1em;
+  color: #dfe6e9;
+}
+
+h2 {
+  font-family: Cerebri Sans, sans-serif;
+  text-align: center;
+  color: #dfe6e9;
+}
+
+.photos {
+  width: 400px;
+  display: block;
+  margin: auto;
+  margin-top: 2em;
+  border-style: solid;
+  border-width: 0.15em;
+  border-color: #dfe6e9;
+}
+
+.redbutton {
+  height: 90px;
+  width: 90px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.orangebutton {
+  height: 90px;
+  width: 90px;
+  background-color: #e67e22;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.yellowbutton {
+  height: 90px;
+  width: 90px;
+  background-color: #feca57;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.greenbutton {
+  height: 90px;
+  width: 90px;
+  background-color: #27ae60;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.bluebutton {
+  height: 90px;
+  width: 90px;
+  background-color: #2980b9;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.purplebutton {
+  height: 90px;
+  width: 90px;
+  background-color: #8e44ad;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.pinkbutton {
+  height: 90px;
+  width: 90px;
+  background-color: #f368e0;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.colors {
+  overflow: auto;
+  white-space: nowrap;
+  background-color: #2d3436;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.colorreturn {
+  position: fixed;
+  left: 27.8em;
+  top: 40em;
+}
+
+::-webkit-scrollbar {
+display: none;
+}
