@@ -148,9 +148,12 @@ function displayPink () {
 
 ## Feedback & verbeteringen
 
-- als je naar beneden scrollt verdwijnen de kleurknoppen, het is handig om snel weer toegang te hebben tot filteren.
+Na het testen van het project komen een aantal dingen naar boven die verbeterd kunnen worden, hieronder worden de aanpassingen 1 voor 1 behandeld.
 
 ### Oplossing 1
+
+- als je naar beneden scrollt verdwijnen de kleurknoppen, het is handig om snel weer toegang te hebben tot filteren.
+
 ![](oplossing1.png)
 
 Om dit op te lossen heb ik een fixed knop toegevoegd die de gebruiker terug naar de bovenkant van de pagina stuurt. Hier zijn de kleurknoppen weer zichtbaar.
@@ -174,10 +177,12 @@ css
 ```
 
 
+
+### Oplossing 2
+
 - nadat je klikt op een kleur zie je niet welke kleur je hebt geselecteerd (behalve aan de gefilterde foto's.)
 (stom, over het hoofd gezien. Dit had natuurlijk vanaf het begin een feature moeten zijn, het script maken nam iets teveel tijd in beslag).
 
-### Oplossing 2
 ![](oplossing2.png)
 
 Om dit op te lossen heb ik een stuk toegevoegd aan de javscript code die filtert na een klik. De code voegt een border toe op de kleurknop waarop wordt geklikt en zet alle andere kleurknoppen op border: none;
@@ -203,9 +208,10 @@ function displayGreen () {
 ```
 
 
-- Na het selecteren van een kleur kan je niet meer terug naar een view met alle kleuren (de pagina refreshen werkt)
 
 ### Oplossing 3
+
+- Na het selecteren van een kleur kan je niet meer terug naar een view met alle kleuren (de pagina refreshen werkt)
 
 Work in progress
 
