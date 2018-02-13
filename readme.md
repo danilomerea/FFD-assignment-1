@@ -216,8 +216,8 @@ function displayGreen () {
 Work in progress
 
 ## Bronnen
-- [Pexels.com](https://www.pexels.com/)voor de foto's
-- [stackoverflow](https://stackoverflow.com/)voor een aantal handige debug tips
+- [Pexels.com](https://www.pexels.com/) voor de foto's
+- [stackoverflow](https://stackoverflow.com/) voor een aantal handige debug tips
 
 ## Overige informatie
 Naam: Jimmy de Kroon
