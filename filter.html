@@ -5,8 +5,6 @@
 
     <link rel="stylesheet" type="text/css" href="filter.css">
 
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-
   </head>
   <body>
 
@@ -21,25 +19,29 @@
 
   <div class="colors">
 
-      <span class="redbutton" onclick="displayRed ()"></span>
+      <span id="allbutton" class="color" onclick="displayAll ()"></span>
 
-      <span class="orangebutton" onclick="displayOrange ()"></span>
+      <span id="redbutton" class="color" onclick="displayRed ()"></span>
 
-      <span class="yellowbutton" onclick="displayYellow ()"></span>
+      <span id="orangebutton" class="color" onclick="displayOrange ()"></span>
 
-      <span class="greenbutton" onclick="displayGreen ()"></span>
+      <span id="yellowbutton" class="color" onclick="displayYellow ()"></span>
 
-      <span class="bluebutton" onclick="displayBlue ()"></span>
+      <span id="greenbutton" class="color" onclick="displayGreen ()"></span>
 
-      <span class="purplebutton" onclick="displayPurple ()"></span>
+      <span id="bluebutton" class="color" onclick="displayBlue ()"></span>
 
-      <span class="pinkbutton" onclick="displayPink ()"></span>
+      <span id="purplebutton" class="color" onclick="displayPurple ()"></span>
+
+      <span id="pinkbutton" class="color" onclick="displayPink ()"></span>
 
   </div>
 
         <a href="#">
           <img href="#" class="colorreturn" src="pics/colorreturn.png">
         </a>
+
+      <div class="photoscontainer">
 
         <img id="green" class="photos" src="pics/forest.png">
 
@@ -55,6 +57,7 @@
 
         <img id="yellow" class="photos" src="pics/pepper.png">
 
+      </div>
 
     <!-- voeg js files toe -->
     <script type="text/javascript" src="filter.js"></script>
