@@ -213,7 +213,149 @@ function displayGreen () {
 
 - Na het selecteren van een kleur kan je niet meer terug naar een view met alle kleuren (de pagina refreshen werkt)
 
-Work in progress
+Een extra button is toegevoegd (voor nu nog wit), met deze button worden alle afbeeldingen terug gezet naar display: block
+
+``` javascript
+function displayAll () {
+  allButton.style.border = "solid #000"
+  greenButton.style.border = "none";
+  blueButton.style.border = "none";
+  redButton.style.border = "none";
+  pinkButton.style.border = "none";
+  purpleButton.style.border = "none";
+  orangeButton.style.border = "none";
+  yellowButton.style.border = "none";
+
+  green.style.display = "block";
+  blue.style.display = "block";
+  red.style.display = "block";
+  pink.style.display = "block";
+  purple.style.display = "block";
+  orange.style.display = "block";
+  yellow.style.display = "block";
+}
+```
+
+### Fixed bar on scroll
+
+Op verzoek van koop is er gewerkt aan een extra functie.
+de bar met kleuren is vanaf nu ook zichtbaar als er naar beneden wordt gescrolled, de kleurknoppen worden geanimeerd kleiner waardoor de bar minder opvalt. Kleuren zijn nogsteeds te selecteren in deze state. Bij het terug scrollen naar boven krijgen de kleurknoppen weer de normale grootte en ze vallen weer terug op de normale plek.
+
+![](filter.gif)
+
+de code bestaat uit een aantal css en js stappen.
+in js worden een aantal variabelen gemaakt:
+``` javascript
+var header = document.querySelector('.colors'); // selecteert de div waar de kleurknoppen inzitten
+var colorButton = document.querySelector('.color'); // selecteert de individuele kleurknoppen
+var sticky = header.offsetTop; // hierin wordt de offset boven van header opgeslagen
+```
+
+in css staat een class klaar om aangezet te worden, deze zorgt ervoor dat de kleurknoppen na het scrollen in beeld blijven staan (fixed)
+``` css
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+```
+
+in javascript wordt de fucntie stickyheader aangeroepen zodra er naar beneden wordt gescrolled.
+``` javascript
+window.onscroll = function() {stickyheader()};
+
+function stickyheader() {
+  if (window.pageYOffset >= sticky) {
+    header.classList.add("sticky");
+  }
+  else {
+    header.classList.remove("sticky");
+  }
+}
+```
+deze code voegt de class sticky toe als er naar beneden wordt gescrolled en haalt deze weer weg bij het scrollen naar boven.
+
+De volgende stap is het animeren van de kleurknoppen na het scrollen, dit was echter moeilijker dan gedacht.
+Veel Null en undefined errors verder heb ik besloten een simpele (maar qua code niet echt nette) oplossing te gebruiken.
+
+``` javascript
+function stickyheader() {
+  if (window.pageYOffset >= sticky) {
+    header.classList.add("sticky");
+    colorButton.classList.add("colorresize");
+  }
+  else {
+    header.classList.remove("sticky");
+    colorButton.classList.remove("colorresize");
+  }
+}
+```
+Ik heb geprobeerd de buttons een class mee te geven bij het scrollen, zoals de header. Dit werkte niet aangezien de queryselector maar 1 object returned.
+
+Veranderen van queryselector naar getElementByClassname werkt ook niet aangezien dit een array met objecten geeft.
+
+Uiteindelijk opgelost door handmatig de grootte te wijzigen en terug te zetten.
+
+``` javascript
+function stickyheader() {
+  if (window.pageYOffset >= sticky) {
+    header.classList.add("sticky");
+
+    greenButton.style.height = "42px";
+    greenButton.style.width = "42px";
+
+    blueButton.style.height = "42px";
+    blueButton.style.width = "42px";
+
+    redButton.style.height = "42px";
+    redButton.style.width = "42px";
+
+    pinkButton.style.height = "42px";
+    pinkButton.style.width = "42px";
+
+    purpleButton.style.height = "42px";
+    purpleButton.style.width = "42px";
+
+    orangeButton.style.height = "42px";
+    orangeButton.style.width = "42px";
+
+    yellowButton.style.height = "42px";
+    yellowButton.style.width = "42px";
+
+    allButton.style.height = "42px";
+    allButton.style.width = "42px";
+  }
+  else {
+    header.classList.remove("sticky");
+
+    greenButton.style.height = "85px";
+    greenButton.style.width = "85px";
+
+    blueButton.style.height = "85px";
+    blueButton.style.width = "85px";
+
+    redButton.style.height = "85px";
+    redButton.style.width = "85px";
+
+    pinkButton.style.height = "85px";
+    pinkButton.style.width = "85px";
+
+    purpleButton.style.height = "85px";
+    purpleButton.style.width = "85px";
+
+    orangeButton.style.height = "85px";
+    orangeButton.style.width = "85px";
+
+    yellowButton.style.height = "85px";
+    yellowButton.style.width = "85px";
+
+    allButton.style.height = "85px";
+    allButton.style.width = "85px";
+  }
+}
+```
+
+Het is niet echt netjes maar geeft in dit geval wel het visuele resultaat dat ik wil.
 
 ## Bronnen
 - [Pexels.com](https://www.pexels.com/) voor de foto's
